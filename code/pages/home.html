@@ -1,5 +1,19 @@
-<psk-page title="Cardinal.js">
-    <psk-card title="Cardinal.jsMini Framework for building web applications">
-        <p>Mini Framework for building web applications</p>
-    </psk-card>
+<psk-page title="To do list">
+    <psk-container controller-name="TodoListController">
+        <!-- Render each list item from the model -->
+        <psk-for-each data-view-model="items">
+            <p><psk-text-input value="@item" read-only="true"></psk-text-input></p>
+        </psk-for-each>
+
+
+        <!-- Form controls for adding a new item -->
+        <p>
+            <psk-text-input view-model="item"></psk-text-input><br />
+            <psk-button label="Add" button-class="btn btn-info" event-name="list:newItem"></psk-button>
+        </p>
+
+        <!-- Save button -->
+        <p><psk-button label="Save list" button-class="btn btn-primary" event-name="list:save"></psk-button></p>
+    </psk-container>
 </psk-page>
+
